@@ -116,7 +116,7 @@ include 'code.php';
     <div class="main-panel">
       <div class="content-wrapper">
         <div class="d-xl-flex justify-content-between align-items-start">
-          <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Generate Policy<?php echo $messg; ?> </h2>
+          <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Generate Policy </h2>
         </div>
 
 
