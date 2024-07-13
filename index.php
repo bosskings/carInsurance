@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Treasure Base insurance ---\\\\\\</title>
+  <title></title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icons.min.css">
@@ -104,6 +104,10 @@
         <div class="d-xl-flex justify-content-between align-items-start">
           <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Generate Policy </h2>
         </div>
+
+
+
+
         <div class="row">
           <div class="col-12 grid-margin">
             <div class="card">
@@ -114,41 +118,54 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">First Name</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="fname" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
+
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Last Name</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="lname" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
                   </div>
+
+
+
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Email (Optional)</label>
                         <div class="col-sm-9">
-                          <input type="email" class="form-control" />
+                          <input name="email" type="email" class="form-control" />
                         </div>
                       </div>
                     </div>
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Mobile Phone</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="contact" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Policy Type</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select required name="sel_type" class="form-select form-select">
                             <option value="">Select Type</option>
                             <option value="PMI">Private Motor Individual</option>
                             <option value="PMC">Private Motor Corporate</option>
@@ -174,37 +191,50 @@
                         </div>
                       </div>
                     </div>
+
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Engine No</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="engine_no" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Chasis No</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="chasis_no" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Registration No</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="reg_no" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
                   </div>
+
+
+
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle make</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select name="car_brand" required class="form-select form-select">
                             <option value="0">Select Make</option>
                             <option value="ACURA">ACURA</option>
                             <option value="ALFA ROMEO">ALFA ROMEO</option>
@@ -407,11 +437,15 @@
                         </div>
                       </div>
                     </div>
+
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Model</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select name="car_model required class="form-select form-select">
                             <option value="0">Select Model</option>
                             <option value="ACURA:(CL)">ACURA:(CL)</option>
                             <option value="ACURA:(INTEGRA)">ACURA:(INTEGRA)</option>
@@ -2676,11 +2710,17 @@
                         </div>
                       </div>
                     </div>
+
+
+
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Color</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select name="car_color" required class="form-select form-select">
                             <option value="">Choose Color</option>
                             <option value="Air Force blue">Air Force blue</option>
                             <option value="Alice blue">Alice blue</option>
@@ -3436,11 +3476,15 @@
                         </div>
                       </div>
                     </div>
+
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Year</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select name="model_year" required class="form-select form-select">
                             <option value="Select Year">Select Year</option>
                             <option value="1980">1980</option>
                             <option value="1981">1981</option>
@@ -3566,11 +3610,15 @@
                         </div>
                       </div>
                     </div>
+
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Type</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select name="veh_type" required class="form-select form-select">
                             <option value="Select Vehicle Type">Select Vehicle Type</option>
                             <option value="Motorcycle (Motorcycle Only)">Motorcycle (Motorcycle Only)</option>
                             <option value="Tricycle (Tricycle Only)">Tricycle (Tricycle Only)</option>
@@ -3587,28 +3635,41 @@
                         </div>
                       </div>
                     </div>
+
+
+
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Address (Optional)</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" />
+                          <input name="address" required type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
+
+
+
                     <div class="col-md-12">
                         <div class="form-check">
                           <label class="form-check-label" style="color: black;">
-                            <input type="checkbox" class="form-check-input" name="" id="policycheckbox1" value=""> I
+                            <input required type="checkbox" class="form-check-input" name="" id="policycheckbox1" value=""> I
                             hereby confirm that I am a Law Abiding Citizen not involved in any fraudulent or malicious
                             activities. This policy has been taken in good faith as required by law. </label>
                         </div>
                     </div>
+
+
+
                     <div class="col-md-6">
                         <button class="btn btn-info mt-4">Generate Policy</button>
                     </div>
+
+
                     <div class="col-md-6">
                         <button class="btn btn-danger mt-4">Reset / Clear</button>
                     </div>
+
+
                   </div>
                 </form>
               </div>
