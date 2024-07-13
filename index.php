@@ -24,6 +24,19 @@
 </head>
 
 <body>
+
+<?php 
+
+include 'conn.php';
+include 'code.php';
+
+
+?>
+
+
+
+
+
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -49,6 +62,7 @@
       </button>
     </div>
   </nav>
+
   <!-- partial -->
   <div class="container-fluid page-body-wrapper">
     <!-- partial:partials/_sidebar.html -->
@@ -445,7 +459,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Model</label>
                         <div class="col-sm-9">
-                          <select name="car_model required class="form-select form-select">
+                          <select name="car_model" required class="form-select form-select">
                             <option value="0">Select Model</option>
                             <option value="ACURA:(CL)">ACURA:(CL)</option>
                             <option value="ACURA:(INTEGRA)">ACURA:(INTEGRA)</option>
