@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Car Insurance</title>
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -126,7 +126,7 @@ include 'code.php';
           <div class="col-12 grid-margin">
             <div class="card">
               <div class="card-body">
-                <form class="form-sample">
+                <form class="form-sample" method="POST">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
@@ -248,7 +248,7 @@ include 'code.php';
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle make</label>
                         <div class="col-sm-9">
-                          <select name="car_brand" required class="form-select form-select">
+                          <select name="vehicle_brand" required class="form-select form-select">
                             <option value="0">Select Make</option>
                             <option value="ACURA">ACURA</option>
                             <option value="ALFA ROMEO">ALFA ROMEO</option>
@@ -459,7 +459,7 @@ include 'code.php';
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Model</label>
                         <div class="col-sm-9">
-                          <select name="car_model" required class="form-select form-select">
+                          <select name="vehicle_model" required class="form-select form-select">
                             <option value="0">Select Model</option>
                             <option value="ACURA:(CL)">ACURA:(CL)</option>
                             <option value="ACURA:(INTEGRA)">ACURA:(INTEGRA)</option>
@@ -2734,7 +2734,7 @@ include 'code.php';
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Color</label>
                         <div class="col-sm-9">
-                          <select name="car_color" required class="form-select form-select">
+                          <select name="vehicle_color" required class="form-select form-select">
                             <option value="">Choose Color</option>
                             <option value="Air Force blue">Air Force blue</option>
                             <option value="Alice blue">Alice blue</option>
@@ -3672,10 +3672,10 @@ include 'code.php';
                         </div>
                     </div>
 
-
+                  <?php echo $insert_succ_messg; ?>  
 
                     <div class="col-md-6">
-                        <button class="btn btn-info mt-4">Generate Policy</button>
+                        <button name="submit_pol" class="btn btn-info mt-4">Generate Policy</button>
                     </div>
 
 
