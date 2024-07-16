@@ -24,6 +24,16 @@
 </head>
 
 <body>
+
+
+<?php 
+
+include 'conn.php';
+include 'code.php';
+
+?>
+
+
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -103,7 +113,7 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="d-xl-flex justify-content-between align-items-start">
-                    <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Renew Policy </h2>
+                    <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Verify Policy </h2>
                 </div>
                 <div class="row">
                     <div class="col-12 grid-margin">
@@ -113,32 +123,49 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Policy No</label>
+                                                <label class="col-sm-3 col-form-label">Select Option</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" />
+                                                    <select class="form-select form-select">
+                                                        <option value="Select an Option">Select an Option</option>
+                                                        <option value="Verify by Policy No (Enter Policy No)">Verify by
+                                                            Policy No (Enter Policy No)</option>
+                                                        <option value="Verify by Certificate No (Enter Certifcate No)">
+                                                            Verify by Certificate No (Enter Certifcate No)</option>
+                                                        <option
+                                                            value="Verify by Vehicle Registration No (Enter Reg No)">
+                                                            Verify by Vehicle Registration No (Enter Reg No)</option>
+                                                        <option value="Verify by Chasis No (Enter Chasis No)">Verify by
+                                                            Chasis No (Enter Chasis No)</option>
+                                                        <option value="Verify by Engine No (Enter Engine No)">Verify by
+                                                            Engine No (Enter Engine No)</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Mobile No</label>
+                                                <label class="col-sm-3 col-form-label">Enter Value</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" />
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Policy, reg or cert No" />
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-6">
-                                            <button class="btn btn-info mt-4 mb-4">Fetch Policy</button>
-                                            <p style="color: red;"><b>Expiration Date: 20/02/2024</b></p>
+                                            <button class="btn btn-info mt-4">Verify Policy</button>
                                         </div>
+
                                         <div class="col-lg-12 grid-margin stretch-card">
                                             <div class="card">
                                                 <div class="card-body">
+                                                    <h4 class="card-title">Record</h4>
                                                     <table class="table table-bordered">
                                                         <thead>
                                                             <tr>
                                                                 <th> Field </th>
-                                                                <th> Value </th>
+                                                                <th> Valid </th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -154,14 +181,6 @@
                                                     </table>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <button class="btn btn-primary mt-4">Renew Policy</button>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <button class="btn btn-danger mt-4">Reset/Clear</button>
                                         </div>
                                     </div>
                                 </form>

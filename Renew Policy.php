@@ -24,6 +24,17 @@
 </head>
 
 <body>
+
+
+<?php
+
+include 'conn.php';
+include 'code.php';
+
+?>
+
+
+
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -103,7 +114,7 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="d-xl-flex justify-content-between align-items-start">
-                    <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Policy Via Mail </h2>
+                    <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Renew Policy </h2>
                 </div>
                 <div class="row">
                     <div class="col-12 grid-margin">
@@ -113,7 +124,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Enter Policy</label>
+                                                <label class="col-sm-3 col-form-label">Policy No</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control" />
                                                 </div>
@@ -121,23 +132,47 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Email</label>
+                                                <label class="col-sm-3 col-form-label">Mobile No</label>
                                                 <div class="col-sm-9">
-                                                    <input type="email" class="form-control" />
+                                                    <input type="text" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-check">
-                                                <p style="color: black; text-align: center;">Note: The Certificate will be Sent by Email in about 5minutes to the
-                                                    provided Email Addres. Please make sure the mail address you have
-                                                    provided is a valid address that you have access to.</p>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-info mt-4 mb-4">Fetch Policy</button>
+                                            <p style="color: red;"><b>Expiration Date: 20/02/2024</b></p>
+                                        </div>
+                                        <div class="col-lg-12 grid-margin stretch-card">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th> Field </th>
+                                                                <th> Value </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> Field 1 </td>
+                                                                <td> Value 1 </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> Field 2 </td>
+                                                                <td> Value 2 </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button class="btn btn-info mt-4">Request Now</button>
+                                            <button class="btn btn-primary mt-4">Renew Policy</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-danger mt-4">Reset/Clear</button>
                                         </div>
                                     </div>
                                 </form>

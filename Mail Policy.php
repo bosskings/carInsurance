@@ -24,6 +24,16 @@
 </head>
 
 <body>
+
+<?php 
+
+include 'conn.php';
+include 'code.php';
+
+?>
+
+
+
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -103,7 +113,7 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="d-xl-flex justify-content-between align-items-start">
-                    <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Verify Policy </h2>
+                    <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Policy Via Mail </h2>
                 </div>
                 <div class="row">
                     <div class="col-12 grid-margin">
@@ -113,64 +123,31 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Select Option</label>
+                                                <label class="col-sm-3 col-form-label">Enter Policy</label>
                                                 <div class="col-sm-9">
-                                                    <select class="form-select form-select">
-                                                        <option value="Select an Option">Select an Option</option>
-                                                        <option value="Verify by Policy No (Enter Policy No)">Verify by
-                                                            Policy No (Enter Policy No)</option>
-                                                        <option value="Verify by Certificate No (Enter Certifcate No)">
-                                                            Verify by Certificate No (Enter Certifcate No)</option>
-                                                        <option
-                                                            value="Verify by Vehicle Registration No (Enter Reg No)">
-                                                            Verify by Vehicle Registration No (Enter Reg No)</option>
-                                                        <option value="Verify by Chasis No (Enter Chasis No)">Verify by
-                                                            Chasis No (Enter Chasis No)</option>
-                                                        <option value="Verify by Engine No (Enter Engine No)">Verify by
-                                                            Engine No (Enter Engine No)</option>
-                                                    </select>
+                                                    <input type="text" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Enter Value</label>
+                                                <label class="col-sm-3 col-form-label">Email</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Policy, reg or cert No" />
+                                                    <input type="email" class="form-control" />
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <p style="color: black; text-align: center;">Note: The Certificate will be Sent by Email in about 5minutes to the
+                                                    provided Email Addres. Please make sure the mail address you have
+                                                    provided is a valid address that you have access to.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button class="btn btn-info mt-4">Verify Policy</button>
-                                        </div>
-
-                                        <div class="col-lg-12 grid-margin stretch-card">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Record</h4>
-                                                    <table class="table table-bordered">
-                                                        <thead>
-                                                            <tr>
-                                                                <th> Field </th>
-                                                                <th> Valid </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td> Field 1 </td>
-                                                                <td> Value 1 </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> Field 2 </td>
-                                                                <td> Value 2 </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
+                                            <button class="btn btn-info mt-4">Request Now</button>
                                         </div>
                                     </div>
                                 </form>
