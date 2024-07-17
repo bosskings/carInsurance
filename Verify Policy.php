@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Verify Policy</title>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -119,13 +119,13 @@ include 'code.php';
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-sample">
+                                <form method="POST" class="form-sample">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Select Option</label>
                                                 <div class="col-sm-9">
-                                                    <select class="form-select form-select">
+                                                    <select name="pol_verify_method" Required class="form-select form-select">
                                                         <option value="Select an Option">Select an Option</option>
                                                         <option value="Verify by Policy No (Enter Policy No)">Verify by
                                                             Policy No (Enter Policy No)</option>
@@ -146,15 +146,16 @@ include 'code.php';
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Enter Value</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control"
+                                                    <input Required  name="pol_ver_no"type="text" class="form-control"
                                                         placeholder="Policy, reg or cert No" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php echo $pol_verf_messg; ?>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button class="btn btn-info mt-4">Verify Policy</button>
+                                            <button name="verify_policy" class="btn btn-info mt-4">Verify Policy</button>
                                         </div>
 
                                         <div class="col-lg-12 grid-margin stretch-card">

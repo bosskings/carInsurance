@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Mail Policy</title>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -119,13 +119,13 @@ include 'code.php';
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-sample">
+                                <form method="POST" class="form-sample">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Enter Policy</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" />
+                                                    <input Required name="mail_policy_name" type="text" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +133,7 @@ include 'code.php';
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Email</label>
                                                 <div class="col-sm-9">
-                                                    <input type="email" class="form-control" />
+                                                    <input Required name="mail_policy_email" type="email" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -145,9 +145,10 @@ include 'code.php';
                                             </div>
                                         </div>
                                     </div>
+                                    <?php echo $mail_policy_messg; ?>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button class="btn btn-info mt-4">Request Now</button>
+                                            <button name="mail_policy_btn" class="btn btn-info mt-4">Request Now</button>
                                         </div>
                                     </div>
                                 </form>

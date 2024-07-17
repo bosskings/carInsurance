@@ -5,6 +5,8 @@ include 'conn.php';
 global $insert_succ_messg;
 
 
+// insert into policy table
+
 if(isset($_POST['submit_pol'])) {
 
 $pol_fname = $_POST['fname'];   
@@ -35,16 +37,79 @@ $insert_succ_messg = "<p style='text-align:center;'><b style='color:#00e600;'><i
 
 
 
+// insert into mail policy table
+
+global $mail_policy_messg;
+
+if (isset($_POST['mail_policy_btn'])) {
+
+$mail_policy_name = $_POST['mail_policy_name'];
+$mail_policy_email = $_POST['mail_policy_email'];
+
+$insert_mail_policy = "INSERT INTO mail_policy (mail_policy, email) VALUES ('$mail_policy_name', '$mail_policy_email') ";
+$insert_mail_policy = mysqli_query($conn, $insert_mail_policy);
+
+$mail_policy_messg = "<p style='text-align:center; color:#00e600;'><b><i class='fa fa-check-circle' aria-hidden='true'></i>Certificate Has Been Sent</b></p>";
+
+}
 
 
 
 
+// insert into print policy
+
+global $print_policy_messg;
+
+if (isset($_POST['print_pol_btn'])) {
+
+$print_policy_type = $_POST['print_policy_type'];
+$print_policy_no = $_POST['print_policy_no'];
+$checkbox = "print";
+
+$insert_print_policy = "INSERT INTO print_policy (policy_type, policy_value, checkbox)
+VALUES ('$print_policy_type', '$print_policy_no', '$checkbox') ";
+$insert_print_policy = mysqli_query($conn, $insert_print_policy);
+
+$print_policy_messg = "<p style='text-align:center; color:#00e600;'><b><i class='fa fa-check-circle' aria-hidden='true'></i>Your Request Has Been Sent</b></p>";
+    
+}
+
+
+
+// insert into renew policy table
+
+global $renew_pol_messg;
+
+if (isset($_POST['renew_pol_btn'])) {
+
+$renew_pol_no = $_POST['renew_pol_no'];
+$renew_pol_contact = $_POST['renew_pol_contact'];
+
+$insert_renew_policy = "INSERT INTO renew_policy (policy_no, mobile_no) VALUES ('$renew_pol_no', '$renew_pol_contact') ";
+$insert_renew_policy = mysqli_query($conn, $insert_renew_policy);
+
+$renew_pol_messg = "<p style='text-align:center; color:#00e600;'><b><i class='fa fa-check-circle' aria-hidden='true'></i>Policy Fetched</b></p>";
+
+}
 
 
 
 
+// insert into policy verification table
 
+global $pol_verf_messg;
 
+if (isset($_POST['verify_policy'])) {
+
+$pol_verify_method = $_POST['pol_verify_method'];
+$pol_ver_no = $_POST['pol_ver_no'];
+
+$insert_pol_verf = "INSERT INTO policy_verify (method, ver_no) VALUES ('$pol_verify_method', '$pol_ver_no') ";
+$insert_pol_verf = mysqli_query($conn, $insert_pol_verf);
+
+$pol_verf_messg = "<p style='text-align:center; color:#00e600;'><b><i class='fa fa-check-circle' aria-hidden='true'></i>Verified</b></p>";
+
+}
 
 
 
