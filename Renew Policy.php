@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Renew Policy</title>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -120,13 +120,13 @@ include 'code.php';
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-sample">
+                                <form method="POST" class="form-sample">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Policy No</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" />
+                                                    <input Required name="renew_pol_no" type="text" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -134,12 +134,13 @@ include 'code.php';
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Mobile No</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" />
+                                                    <input Required name="renew_pol_contact" type="text" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php echo $renew_pol_messg; ?>
                                         <div class="col-md-6">
-                                            <button class="btn btn-info mt-4 mb-4">Fetch Policy</button>
+                                            <button name="renew_pol_btn" class="btn btn-info mt-4 mb-4">Fetch Policy</button>
                                             <p style="color: red;"><b>Expiration Date: 20/02/2024</b></p>
                                         </div>
                                         <div class="col-lg-12 grid-margin stretch-card">

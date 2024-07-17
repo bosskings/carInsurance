@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Print Policy</title>
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -119,13 +119,13 @@ include 'code.php';
           <div class="col-12 grid-margin">
             <div class="card">
               <div class="card-body">
-                <form class="form-sample">
+                <form method="POST" class="form-sample">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Select Option</label>
                         <div class="col-sm-9">
-                          <select class="form-select form-select">
+                          <select name="print_policy_type" Required class="form-select form-select">
                             <option value="">Select Type</option>
                             <option value="Print by Policy Number">Print by Policy Number</option>
                             <option value="Print by Certificate Number">Print by Certificate Number</option>
@@ -138,14 +138,14 @@ include 'code.php';
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Enter Value</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" placeholder="Policy, reg or cert No" />
+                          <input name="print_policy_no" type="text" class="form-control" placeholder="Policy, reg or cert No" />
                         </div>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-check">
                         <label class="form-check-label" style="color: black;">
-                          <input type="checkbox" class="form-check-input" name="" id="policycheckbox1" value="">Print
+                          <input name="checkbox" type="checkbox" class="form-check-input" id="policycheckbox1">Print
                           Advance Renewal Copy? (If Exists). If you check this box, the system will print the copy of
                           the certificate of an advance renewal policy whose advance renewal Effective Cover Date is to
                           yet come to maturity. If there is no advance renewal details, system simply ignores the
@@ -153,12 +153,13 @@ include 'code.php';
                       </div>
                     </div>
                   </div>
+                  <?php echo $print_policy_messg; ?>
                   <div class="row">
                     <div class="col-md-6">
-                      <button class="btn btn-primary mt-4">Soft Copy</button>
+                      <button name="print_pol_btn" class="btn btn-primary mt-4">Soft Copy</button>
                     </div>
                     <div class="col-md-6">
-                      <button class="btn btn-danger mt-4">Print Now</button>
+                      <button name="print_btn" class="btn btn-danger mt-4">Print Now</button>
                     </div>
                   </div>
                 </form>
