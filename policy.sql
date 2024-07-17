@@ -49,8 +49,8 @@ CREATE TABLE `policy` (
 -- Dumping data for table `policy`
 --
 
-INSERT INTO `policy` (`id`, `first_name`, `last_name`, `email`, `contact`, `policy_type`, `engine_no`, `chasis_no`, `reg_no`, `vehicle_make`, `vehicle_model`, `color`, `model_year`, `vehicle_type`, `sel_address`) VALUES
-(6, 'Monday', 'John', 'kelechi@yahoo.com', '07046837453', 'MCG', 'EER4536YG', '87687rfxbn97', '889947653424', 'BEDFORD', 'ALFA ROMEO:(164)', 'Boysenberry', '2062', 'Taxi (Commercial Only)', '14 Anyaogwu street');
+-- INSERT INTO `policy` (`id`, `first_name`, `last_name`, `email`, `contact`, `policy_type`, `engine_no`, `chasis_no`, `reg_no`, `vehicle_make`, `vehicle_model`, `color`, `model_year`, `vehicle_type`, `sel_address`) VALUES
+-- (6, 'Monday', 'John', 'kelechi@yahoo.com', '07046837453', 'MCG', 'EER4536YG', '87687rfxbn97', '889947653424', 'BEDFORD', 'ALFA ROMEO:(164)', 'Boysenberry', '2062', 'Taxi (Commercial Only)', '14 Anyaogwu street');
 
 --
 -- Indexes for dumped tables
