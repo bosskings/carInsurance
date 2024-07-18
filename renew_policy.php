@@ -67,37 +67,37 @@ include 'code.php';
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="index.php">
                         <span class="icon-bg"><i class="mdi mdi-account-star menu-icon"></i></span>
                         <span class="menu-title">Obtain Policy</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="renew_policy.php">
                         <span class="icon-bg"><i class="mdi mdi-account-search menu-icon"></i></span>
                         <span class="menu-title">Renew Policy</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="print_policy.php">
                         <span class="icon-bg"><i class="mdi mdi-printer menu-icon"></i></span>
                         <span class="menu-title">Print Policy</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="verify_policy.php">
                         <span class="icon-bg"><i class="mdi mdi-account-check menu-icon"></i></span>
                         <span class="menu-title">Verify Policy Data</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="mail_policy.php">
                         <span class="icon-bg"><i class="mdi mdi-email menu-icon"></i></span>
                         <span class="menu-title">Policy Via Mail</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="index.php">
                         <span class="icon-bg"><i class="mdi mdi-logout menu-icon"></i></span>
                         <span class="menu-title">Exit</span>
                     </a>
