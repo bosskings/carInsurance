@@ -26,12 +26,6 @@
 <body>
 
 
-<?php
-
-include 'conn.php';
-include 'code.php';
-
-?>
 
 
 
@@ -120,13 +114,13 @@ include 'code.php';
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" class="form-sample">
+                                <form method="GET" class="form-sample">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Policy No</label>
                                                 <div class="col-sm-9">
-                                                    <input Required name="renew_pol_no" type="text" class="form-control" />
+                                                    <input Required name="renew_pol_no" type="text" class="form-control" value="<?php if(isset($_REQUEST['renew_pol_no'])) echo $_REQUEST['renew_pol_no'] ?>"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,14 +128,21 @@ include 'code.php';
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Mobile No</label>
                                                 <div class="col-sm-9">
-                                                    <input Required name="renew_pol_contact" type="text" class="form-control" />
+                                                    <input Required name="renew_pol_contact" type="text" class="form-control" value="<?php if(isset($_REQUEST['renew_pol_contact'])) echo $_REQUEST['renew_pol_contact'] ?>" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php echo $renew_pol_messg; ?>
+                                        <?php
+                                         
+                                        if(isset($renew_pol_messg)) {
+                                            echo $renew_pol_messg;
+                                         }   
+                                        if(isset($renew_error)) {
+                                            echo $renew_error;
+                                         }   
+                                        ?>
                                         <div class="col-md-6">
                                             <button name="renew_pol_btn" class="btn btn-info mt-4 mb-4">Fetch Policy</button>
-                                            <p style="color: red;"><b>Expiration Date: 20/02/2024</b></p>
                                         </div>
                                         <div class="col-lg-12 grid-margin stretch-card">
                                             <div class="card">
@@ -154,29 +155,26 @@ include 'code.php';
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td> Field 1 </td>
-                                                                <td> Value 1 </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> Field 2 </td>
-                                                                <td> Value 2 </td>
-                                                            </tr>
+                                                            <?php include 'renew_pol_code.php'; ?>
+
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- </form> -->
+
+                                    <!-- <form method="POST"> -->
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button class="btn btn-primary mt-4">Renew Policy</button>
+                                            <button name="renew" class="btn btn-primary mt-4">Renew Policy</button>
                                         </div>
                                         <div class="col-md-6">
                                             <button class="btn btn-danger mt-4">Reset/Clear</button>
                                         </div>
                                     </div>
-                                </form>
+                                    </form>
                             </div>
                         </div>
                     </div>

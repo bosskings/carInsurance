@@ -29,7 +29,7 @@
 <?php 
 
 include 'conn.php';
-include 'code.php';
+include 'verify_pol_code.php';
 
 ?>
 

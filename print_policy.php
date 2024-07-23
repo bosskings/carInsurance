@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Treasure Base insurance</title>
+  <!-- <title>Treasure Base insurance</title> -->
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icons.min.css">
@@ -26,13 +26,7 @@
 <body>
 
 
-<?php 
-
-include 'conn.php';
-include 'code.php';
-
-?>
-
+<?php include 'print_pol_code.php'; ?>
 
 
   <!-- partial:partials/_navbar.html -->
@@ -119,7 +113,7 @@ include 'code.php';
           <div class="col-12 grid-margin">
             <div class="card">
               <div class="card-body">
-                <form method="POST" class="form-sample">
+                <form method="GET" class="form-sample">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
@@ -127,9 +121,9 @@ include 'code.php';
                         <div class="col-sm-9">
                           <select name="print_policy_type" Required class="form-select form-select">
                             <option value="">Select Type</option>
-                            <option value="Print by Policy Number">Print by Policy Number</option>
+                            <option value="policy_no">Print by Policy Number</option>
                             <option value="Print by Certificate Number">Print by Certificate Number</option>
-                            <option value="Print by Registration Number">Print by Registration Number</option>
+                            <option value="reg_no">Print by Registration Number</option>
                           </select>
                         </div>
                       </div>
@@ -153,13 +147,16 @@ include 'code.php';
                       </div>
                     </div>
                   </div>
-                  <?php echo $print_policy_messg; ?>
+        
+
+          
                   <div class="row">
                     <div class="col-md-6">
                       <button name="print_pol_btn" class="btn btn-primary mt-4">Soft Copy</button>
                     </div>
                     <div class="col-md-6">
                       <button name="print_btn" class="btn btn-danger mt-4">Print Now</button>
+                      
                     </div>
                   </div>
                 </form>

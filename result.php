@@ -44,18 +44,47 @@
 
 <body>
 
+
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 item-details">
+
+    
+        <?php 
+        
+        include 'print_pol_code.php';
+
+            if(isset($_REQUEST['id'])) {
+                $id = $_REQUEST['id'];
+            }
+
+            $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
+            $select = mysqli_query($conn, $select);
+
+            if (mysqli_num_rows($select) > 0) {
+                $fetch_search = mysqli_fetch_assoc($select);
+                echo $fetch_search['policy_no'];
+            }
+
+        ?>
+        
+                <div class="col-md-8 offset-md-2 item-details">
                 <p style="text-align: center; color: green;"><u><b>Certifcate of Insurance</b></u></p>
-                <p>Certificate Number: <b>2233447</b> Policy Number: <b>P/TBICSL/PMI/24/ABA/2233447</b></p>
-                <p>1. Index Mark and Registration Number No. of Vehicle: <span class="item-name">WER431PB</span></p><br>
-                <p>Chasis Number : <span class="item-name">4T3ZF13C91U388134</span></p>
-                <P>2. Name of Policy Holder: <span class="item-name">Mr Michael Iseh</span></P>
-                <p>3. Effective Date of Commencement of Insurance: <span class="item-name">2024-06-17</span></p>
+                
+                <p>Certificate Number: <b>2233447</b> Policy Number: <b><?php echo $coll_policy_no = $fetch_det['policy_no']; ?></b></p>
+                
+                <p>1. Index Mark and Registration Number No. of Vehicle: <span class="item-name"><?php echo $coll_reg_no = $fetch_det['reg_no']; ?></span></p>
+                
+                <p>Chasis Number : <span class="item-name"><?php echo $coll_chasis_no = $fetch_det['chasis_no']; ?></span></p><br>
+                
+                <P>2. Name of Policy Holder: <span class="item-name"><?php echo $coll_fname = $fetch_det['first_name'] . ' ' . $coll_lname = $fetch_det['last_name']; ?></span></P>
+                
+                <p>3. Effective Date of Commencement of Insurance: <span class="item-name"><?php echo $coll_date = $fetch_det['policy_date']; ?></span></p>
+                
                 <p>4. Date of Expiry of Insurance: <span class="item-name">2025-06-17</span></p>
-                <p>5. Type of Cover: <span class="item-name">Third Party Sienna (Private Motor Only)</span></p>
-                <p>6. Make of Vehicle: <span class="item-name">TOYOTA SIENNA</span></p>
+                
+                <p>5. Type of Cover: <span class="item-name"><?php echo $coll_vehicle_type = $fetch_det['vehicle_type']; ?></span></p>
+                
+                <p>6. Make of Vehicle: <span class="item-name"><?php echo $coll_vehicle_make = $fetch_det['vehicle_make']; ?></span></p>
+
                 <p>7. Persons or classes of persons entitled to drive</p>
                 <p class="subpart">(i) Whilst the vehicle is been used in connection with the policy holder's business
                 </p>
@@ -84,6 +113,7 @@
                     any one disabled mechanically - propelled vehicle</p>
                 <p>I/WE HEREBY CERTIFY THAT the policy to which this certificate relates is issued<br> in accordance with
                     the provisions of Motor Vehicle's (Third Party Insurance) Ordinance Act 1993</p>
+                
                 <p style="color: red; text-align: right; padding-right: 50px; font-weight: 700;">TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p>
                 <div class="row">
                     <div class="col-md-4">
@@ -94,7 +124,14 @@
                     </div>
                 </div>
             </div>
+
+
+    <div class="row">
+        
+        
+
         </div>
+    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

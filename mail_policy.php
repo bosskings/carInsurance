@@ -28,7 +28,7 @@
 <?php 
 
 include 'conn.php';
-include 'code.php';
+include 'mail_code.php';
 
 ?>
 

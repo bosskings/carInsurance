@@ -28,7 +28,7 @@
 <?php 
 
 include 'conn.php';
-include 'code.php';
+include 'obtain_policy.php';
 
 
 ?>
@@ -122,6 +122,7 @@ include 'code.php';
 
 
 
+
         <div class="row">
           <div class="col-12 grid-margin">
             <div class="card">
@@ -158,6 +159,7 @@ include 'code.php';
                         <label class="col-sm-3 col-form-label">Email (Optional)</label>
                         <div class="col-sm-9">
                           <input name="email" type="email" class="form-control" />
+                          <?php echo $email_err; ?>
                         </div>
                       </div>
                     </div>
