@@ -52,17 +52,19 @@
         
         include 'print_pol_code.php';
 
-            if(isset($_REQUEST['id'])) {
-                $id = $_REQUEST['id'];
-            }
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+        } else {
+            echo "ID not found in the URL";
+        }
+        
+        
+        $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
+        $select = mysqli_query($conn, $select);
 
-            $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
-            $select = mysqli_query($conn, $select);
-
-            if (mysqli_num_rows($select) > 0) {
-                $fetch_search = mysqli_fetch_assoc($select);
-                echo $fetch_search['policy_no'];
-            }
+        if (mysqli_num_rows($select) > 0) {
+            $fetch_det = mysqli_fetch_assoc($select);
+        }
 
         ?>
         
