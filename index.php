@@ -3658,7 +3658,7 @@ include 'obtain_policy.php';
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Address (Optional)</label>
                         <div class="col-sm-9">
-                          <input name="address" required type="text" class="form-control" />
+                          <input name="address" type="text" class="form-control" />
                         </div>
                       </div>
                     </div>
