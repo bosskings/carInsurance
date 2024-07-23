@@ -79,9 +79,9 @@
                 
                 <P>2. Name of Policy Holder: <span class="item-name"><?php echo $coll_fname = $fetch_det['first_name'] . ' ' . $coll_lname = $fetch_det['last_name']; ?></span></P>
                 
-                <p>3. Effective Date of Commencement of Insurance: <span class="item-name"><?php echo $coll_date = $fetch_det['policy_date']; ?></span></p>
+                <p>3. Effective Date of Commencement of Insurance: <span class="item-name"><?php echo $coll_date = $fetch_det['exp_date']; ?></span></p>
                 
-                <p>4. Date of Expiry of Insurance: <span class="item-name">2025-06-17</span></p>
+                <p>4. Date of Expiry of Insurance: <span class="item-name"><?php echo $coll_date = $fetch_det['renew_date']; ?></span></p>
                 
                 <p>5. Type of Cover: <span class="item-name"><?php echo $coll_vehicle_type = $fetch_det['vehicle_type']; ?></span></p>
                 

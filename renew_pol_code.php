@@ -21,7 +21,7 @@ function fetch_policy() {
 
         ?>
 
-            <p style="color: red;"><b>Expiration Date: <?php echo $fetch_no['policy_date']; ?></b></p>
+            <p style="color: red;"><b>Expiration Date: <?php echo $fetch_no['renew_date']; ?></b></p>
 
             <tr>
                 <td> First Name </td>
@@ -113,26 +113,19 @@ function renew_policy(){
     
     $renew_pol_no = $_REQUEST['renew_pol_no'];
     $renew_pol_contact = $_REQUEST['renew_pol_contact'];
-    
-    
-    
 
     //// renew policy
-    $desired_date = date('d-m-Y');
-    list($day, $month, $year) = explode('-', $desired_date);
-    
-    // Get the current year
-    // $current_year = date('Y');
-    
-    if ($current_year == $year) {
-        $new_year = $year;
-    } else {
-        $new_year = $year;
-    }
-    
-    $desired_date =  $day. '-' . $month . '-' .$year;
+    $date = date('Y-m-d');
+    $prev = date('Y-m-d', strtotime('last year'));
+
+    $conf_pol_no = "SELECT * FROM obtain_policy WHERE policy_no = '$renew_pol_no' AND contact = '$renew_pol_contact' ";
+    $conf_pol_no = mysqli_query($conn, $conf_pol_no);
+
+    if (mysqli_num_rows($conf_pol_no) > 0) {
+        $conf_fetch_date = mysqli_fetch_assoc($conf_pol_no);
+        $id = $conf_fetch_date['id'];
     // update date
-    echo $update = "UPDATE obtain_policy SET policy_date = '$desired_date' ";
+    $update = "UPDATE obtain_policy SET exp_date = '$prev', renew_date = '$date' WHERE id = '$id' ";
 
     $sql = mysqli_query($conn, $update);
 
@@ -142,8 +135,7 @@ function renew_policy(){
         echo "not updated";
     }
     
-
-
+}
 
 
 
