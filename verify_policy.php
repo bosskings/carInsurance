@@ -147,7 +147,6 @@
                                         </div>
                                     </div>
 
-                                    
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -168,16 +167,17 @@
                                                         <tbody>
                                                             <?php include 'verify_pol_code.php'; ?>
                                                         </tbody>
+
                                                         <?php 
-                                    
-                                                        if(isset($policy_error)) {
+                                                        
+                                                        if (isset($policy_error)) {
                                                             echo $policy_error;
                                                         }
                                                         
                                                         ?>
-                                                    </table> 
 
 
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
