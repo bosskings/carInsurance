@@ -132,15 +132,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php
-                                         
-                                        if(isset($renew_pol_messg)) {
-                                            echo $renew_pol_messg;
-                                         }   
-                                        if(isset($renew_error)) {
-                                            echo $renew_error;
-                                         }   
-                                        ?>
+                                        
                                         <div class="col-md-6">
                                             <button name="renew_pol_btn" class="btn btn-info mt-4 mb-4">Fetch Policy</button>
                                         </div>
@@ -158,6 +150,15 @@
                                                             <?php include 'renew_pol_code.php'; ?>
 
                                                         </tbody>
+
+                                                        <?php
+                                         
+                                                        if(isset($renew_error)) {
+                                                            echo $renew_error;
+                                                        }   
+                                                        ?>
+
+
                                                     </table>
                                                 </div>
                                             </div>

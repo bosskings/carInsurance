@@ -96,6 +96,8 @@ function fetch_policy() {
                 <td> <?php echo $fetch_no['sel_address']; ?> </td>
             </tr>
         <?php 
+    }else{
+        $GLOBALS['renew_error'] = "<p style='color:red;text-align:center;'><b>Invalid Policy Details!!</b></p>";
     }
 
     
@@ -124,16 +126,23 @@ function renew_policy(){
     if (mysqli_num_rows($conf_pol_no) > 0) {
         $conf_fetch_date = mysqli_fetch_assoc($conf_pol_no);
         $id = $conf_fetch_date['id'];
-    // update date
-    $update = "UPDATE obtain_policy SET exp_date = '$prev', renew_date = '$date' WHERE id = '$id' ";
+        $check_date = $conf_fetch_date['renew_date'];
+        if ($check_date == $date) {
+            echo "<p style='text-align:center;'><b style='color:green;'>Already Up To Date!!</b></p>";
+        }else{
+            // update date
+            $update = "UPDATE obtain_policy SET exp_date = '$prev', renew_date = '$date' WHERE id = '$id' ";
 
-    $sql = mysqli_query($conn, $update);
+            $sql = mysqli_query($conn, $update);
 
-    if($sql){
-        echo "<p style='text-align:center;'><b style='color:green;'>UPDATED</b></p>";
-    }else{
-        echo "<p style='text-align:center;'><b style='color:red;'>Not Updated</b></p>";
-    }
+            if($sql){
+                echo "<p style='text-align:center;'><b style='color:green;'>UPDATED</b></p>";
+            }else{
+                echo "<p style='text-align:center;'><b style='color:red;'>Not Updated</b></p>";
+            }
+        }
+
+    
     
 }
 
