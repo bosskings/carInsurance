@@ -130,9 +130,9 @@ function renew_policy(){
     $sql = mysqli_query($conn, $update);
 
     if($sql){
-        echo "updated";
+        echo "<p style='text-align:center;'><b style='color:green;'>UPDATED</b></p>";
     }else{
-        echo "not updated";
+        echo "<p style='text-align:center;'><b style='color:red;'>Not Updated</b></p>";
     }
     
 }

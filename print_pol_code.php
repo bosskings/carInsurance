@@ -30,10 +30,8 @@ if ($print_choice === 'policy_no') {
         header("Location: result.php?id=$id");
      
     }else{
-        $print_error = "<p style='text-align:center; color:red;'><b>Unmatched Policy Number!!</b></p>";
-        if(isset($print_error)) {
-            echo $print_error;
-          } 
+        $GLOBALS['print_error'] = "<p style='text-align:center; color:red;'><b>Unmatched Policy Number!!</b></p>";
+        // die('----');
     }
 
     }elseif ($print_choice === 'reg_no') {
@@ -51,23 +49,36 @@ if ($print_choice === 'policy_no') {
         header("Location: result.php?id=$id");
 
     }else{
-        $print_error = "<p style='text-align:center; color:red;'><b>Unmatched Registration Number!!</b></p>";
-        if(isset($print_error)) {
-            echo $print_error;
-          } 
+        $GLOBALS['print_error'] = "<p style='text-align:center; color:red;'><b>Unmatched Registration Number!!</b></p>";
     }
 
+}elseif ($print_choice === 'id') {
+    $select_print_reg = "SELECT * FROM obtain_policy WHERE id = '$print_choice_no' ";
+    $select_print_reg = mysqli_query($conn, $select_print_reg);
+
+    if (mysqli_num_rows($select_print_reg) > 0) {
+        
+        $select_user_reg = "SELECT * FROM obtain_policy WHERE id = '$print_choice_no' ";
+        $select_user_reg = mysqli_query($conn, $select_user_reg);
+
+        $fetch_det = mysqli_fetch_assoc($select_user_reg);
+        
+        $id = $fetch_det['id'];
+        header("Location: result.php?id=$id");
+
+    }else{
+        $GLOBALS['print_error'] = "<p style='text-align:center; color:red;'><b>Unmatched Certificate Number!!</b></p>";
+        
+    }
+
+
+
 }else{
-    $print_error = "ERROR";
-    if(isset($print_error)) {
-        echo $print_error;
-      } 
-}
-
+    $GLOBALS['print_error'] = "unexpected Error, please contact support";
 }
 
 
-
+}
 
 
 

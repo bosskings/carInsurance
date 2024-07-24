@@ -23,11 +23,9 @@
   <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
-<body>
-
-
 <?php include 'print_pol_code.php'; ?>
 
+<body>
 
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -122,7 +120,7 @@
                           <select name="print_policy_type" Required class="form-select form-select">
                             <option value="">Select Type</option>
                             <option value="policy_no">Print by Policy Number</option>
-                            <option value="Print by Certificate Number">Print by Certificate Number</option>
+                            <option value="id">Print by Certificate Number</option>
                             <option value="reg_no">Print by Registration Number</option>
                           </select>
                         </div>
@@ -147,8 +145,16 @@
                       </div>
                     </div>
                   </div>
+
+
+                  <?php
+
+                    if(isset($print_error)) {
+                      echo $print_error;
+                    } 
+                  ?>
         
-          
+
                   <div class="row">
                     <div class="col-md-6">
                       <button name="print_pol_btn" class="btn btn-primary mt-4">Soft Copy</button>

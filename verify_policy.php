@@ -26,12 +26,6 @@
 <body>
 
 
-<?php 
-
-include 'conn.php';
-include 'verify_pol_code.php';
-
-?>
 
 
     <!-- partial:partials/_navbar.html -->
@@ -127,16 +121,16 @@ include 'verify_pol_code.php';
                                                 <div class="col-sm-9">
                                                     <select name="pol_verify_method" Required class="form-select form-select">
                                                         <option value="Select an Option">Select an Option</option>
-                                                        <option value="Verify by Policy No (Enter Policy No)">Verify by
+                                                        <option value="policy_no">Verify by
                                                             Policy No (Enter Policy No)</option>
-                                                        <option value="Verify by Certificate No (Enter Certifcate No)">
+                                                        <option value="cert_no">
                                                             Verify by Certificate No (Enter Certifcate No)</option>
                                                         <option
-                                                            value="Verify by Vehicle Registration No (Enter Reg No)">
+                                                            value="reg_no)">
                                                             Verify by Vehicle Registration No (Enter Reg No)</option>
-                                                        <option value="Verify by Chasis No (Enter Chasis No)">Verify by
+                                                        <option value="chasis_no">Verify by
                                                             Chasis No (Enter Chasis No)</option>
-                                                        <option value="Verify by Engine No (Enter Engine No)">Verify by
+                                                        <option value="engine_no">Verify by
                                                             Engine No (Enter Engine No)</option>
                                                     </select>
                                                 </div>
@@ -152,7 +146,9 @@ include 'verify_pol_code.php';
                                             </div>
                                         </div>
                                     </div>
-                                    <?php echo $pol_verf_messg; ?>
+
+                                    
+
                                     <div class="row">
                                         <div class="col-md-6">
                                             <button name="verify_policy" class="btn btn-info mt-4">Verify Policy</button>
@@ -166,20 +162,22 @@ include 'verify_pol_code.php';
                                                         <thead>
                                                             <tr>
                                                                 <th> Field </th>
-                                                                <th> Valid </th>
+                                                                <th> Value </th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td> Field 1 </td>
-                                                                <td> Value 1 </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td> Field 2 </td>
-                                                                <td> Value 2 </td>
-                                                            </tr>
+                                                            <?php include 'verify_pol_code.php'; ?>
                                                         </tbody>
-                                                    </table>
+                                                        <?php 
+                                    
+                                                        if(isset($policy_error)) {
+                                                            echo $policy_error;
+                                                        }
+                                                        
+                                                        ?>
+                                                    </table> 
+
+
                                                 </div>
                                             </div>
                                         </div>
