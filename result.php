@@ -51,6 +51,7 @@
         <?php 
         
         include 'print_pol_code.php';
+        include_once 'createQRcode.php';
 
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -119,7 +120,12 @@
                 <p style="color: red; text-align: right; padding-right: 50px; font-weight: 700;">TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <p><img src="assets/images/barcode.png" height="150px"></p>
+                        <p>
+                            <?php 
+                                //function to display QR-code
+                                displayQRcode("http://localhost/works/carDashboard/result.php?id=".$id)
+                            ?>
+                        </p>
                     </div>
                     <div class="col-md-8">
                         <p class="insurers">Insurers of Cooperators and their Dependents</p>
