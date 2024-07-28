@@ -19,9 +19,9 @@
             $imageSrc = 'data:image/png;base64,' . $imageBase64;
         
             // Output the QR code image as a data URI
-            echo '<img width="100px" src="' . $imageSrc . '" alt="QR Code">';
+            return '<img width="100px" src="' . $imageSrc . '" alt="QR Code">';
         } catch (\Exception $e) {
-            echo "Error generating QR code: " . $e->getMessage();
+            return "Error generating QR code: " . $e->getMessage();
         }
     }
 

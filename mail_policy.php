@@ -27,7 +27,6 @@
 
 <?php 
 
-include 'conn.php';
 include 'mail_code.php';
 
 ?>
@@ -123,9 +122,9 @@ include 'mail_code.php';
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">Enter Policy</label>
+                                                <label class="col-sm-3 col-form-label">Enter Policy no</label>
                                                 <div class="col-sm-9">
-                                                    <input Required name="mail_policy_name" type="text" class="form-control" />
+                                                    <input Required name="mail_policy_no" type="text" class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
@@ -145,7 +144,7 @@ include 'mail_code.php';
                                             </div>
                                         </div>
                                     </div>
-                                    <?php echo $mail_policy_messg; ?>
+                                    <?php if(isset($mail_policy_messg)) echo $mail_policy_messg; ?>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <button name="mail_policy_btn" class="btn btn-info mt-4">Request Now</button>
