@@ -117,7 +117,7 @@
             <p>I/WE HEREBY CERTIFY THAT the policy to which this certificate relates is issued<br> in accordance with
                 the provisions of Motor Vehicle's (Third Party Insurance) Ordinance Act 1993</p>
             
-            <p style="color: red; text-align: right; padding-right: 50px; font-weight: 700;">TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p>
+            <!-- <p style="color: red; text-align: right; padding-right: 50px; font-weight: 700;">TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p> -->
             <div class="row">
                 <div class="col-md-4">
                     <p>
@@ -127,9 +127,9 @@
                         ?>
                     </p>
                 </div>
-                <div class="col-md-8">
+                <!-- <div class="col-md-8">
                     <p class="insurers">Insurers of Cooperators and their Dependents</p>
-                </div>
+                </div> -->
             </div>
         </div>
     
