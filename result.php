@@ -123,7 +123,7 @@
                     <p>
                         <?php 
                             //function to display QR-code
-                            echo displayQRcode("http://localhost/works/carDashboard/result.php?id=".$id)
+                            echo displayQRcode("https://treasurebaseicsl.com/result.php?id=".$id)
                         ?>
                     </p>
                 </div>

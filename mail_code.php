@@ -118,7 +118,7 @@
                         <div class='col-md-4'>
                             <p>
                                 ".
-                                   displayQRcode('http://localhost/works/carDashboard/result.php?id='.$fetch_det['id'])
+                                   displayQRcode('https://treasurebaseicsl.com/result.php?id='.$fetch_det['id'])
                                 ."
                             </p>
                         </div>
@@ -131,7 +131,7 @@
     
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-            $headers .= "From: sender@example.com" . "\r\n";
+            $headers .= "From: contact@treasurebaseicsl.com" . "\r\n";
     
             $mailSent = mail($to, $subject, $message, $headers);
     
