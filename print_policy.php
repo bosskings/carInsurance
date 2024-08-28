@@ -30,8 +30,8 @@
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-      <a class="navbar-brand brand-logo" href="index.html"><img src="../../../assets/images/logo.svg" alt="logo" /></a>
-      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../../assets/images/logo-mini.svg"
+      <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/treasure base logo.png" alt="logo" /></a>
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/treasure base logo.png"
           alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -41,9 +41,6 @@
       <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item d-none d-md-block">
           <a class="nav-link" href="#"> Master Portal </a>
-        </li>
-        <li class="nav-item d-none d-md-block">
-          <a class="nav-link" href="#"> Anonymous User </a>
         </li>
       </ul>
       <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
@@ -105,6 +102,7 @@
     <div class="main-panel">
       <div class="content-wrapper">
         <div class="d-xl-flex justify-content-between align-items-start">
+        <p style="color: black;">Treasure Base (Umuahia) Insurance Co-operative Society</p>
           <h2 class="text-white p-2 font-weight-bold mb-2 bg-secondary"> Print Policy </h2>
         </div>
         <div class="row">
