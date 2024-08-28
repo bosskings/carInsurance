@@ -136,9 +136,9 @@
             $mailSent = mail($to, $subject, $message, $headers);
     
             if ($mailSent) {
-                $GLOBALS['mail_policy_messg'] =  "<span style='color:green'> Email sent successfully. </span>";
+                $GLOBALS['mail_policy_messg'] =  "<span style='color:green'> Email successfully sent. </span>";
             } else {
-                $GLOBALS['mail_policy_messg'] = "<span style='color:red'>  Email sending failed. </span>";
+                $GLOBALS['mail_policy_messg'] = "<span style='color:red'>  Email failed to send. </span>";
             }
         }else{
             $GLOBALS['mail_policy_messg'] = "<span style='color:red'> Policy not found </span>";
