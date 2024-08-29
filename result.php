@@ -49,23 +49,30 @@
 
     
         <?php 
-        
-        include 'print_pol_code.php';
-        include_once 'createQRcode.php';
 
-        if(isset($_GET['id'])) {
-            $id = $_GET['id'];
-        } else {
-            echo "ID not found in the URL";
-        }
-        
-        
-        $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
-        $select = mysqli_query($conn, $select);
+            session_start();
 
-        if (mysqli_num_rows($select) > 0) {
-            $fetch_det = mysqli_fetch_assoc($select);
-        }
+
+            if(!isset($_SESSION['ID'])){
+            header('Location:login.php');
+            }
+        
+            include 'print_pol_code.php';
+            include_once 'createQRcode.php';
+
+            if(isset($_GET['id'])) {
+                $id = $_GET['id'];
+            } else {
+                echo "ID not found in the URL";
+            }
+            
+            
+            $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
+            $select = mysqli_query($conn, $select);
+
+            if (mysqli_num_rows($select) > 0) {
+                $fetch_det = mysqli_fetch_assoc($select);
+            }
 
         ?>
         

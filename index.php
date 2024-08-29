@@ -26,9 +26,16 @@
 <body>
 
 <?php 
+  session_start();
 
-include 'conn.php';
-include 'obtain_policy.php';
+
+  if(!isset($_SESSION['ID'])){
+    header('Location:login.php');
+  } 
+
+
+  include 'conn.php';
+  include 'obtain_policy.php';
 
 
 ?>
@@ -96,7 +103,7 @@ include 'obtain_policy.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="logout.php">
             <span class="icon-bg"><i class="mdi mdi-logout menu-icon"></i></span>
             <span class="menu-title">Exit</span>
           </a>

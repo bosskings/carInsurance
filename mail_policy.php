@@ -92,7 +92,7 @@ include 'mail_code.php';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
+                    <a class="nav-link" href="logout.php">
                         <span class="icon-bg"><i class="mdi mdi-logout menu-icon"></i></span>
                         <span class="menu-title">Exit</span>
                     </a>

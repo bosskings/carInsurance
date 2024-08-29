@@ -20,8 +20,11 @@
   <!-- Layout styles -->
   <link rel="stylesheet" href="assets/css/vertical-light-layout/style.css">
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="32x32"/>
 </head>
+
+  <?php include('login_logic.php'); ?>
+
   <body>
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -30,16 +33,21 @@
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <form class="pt-3">
+                <?php if(isset($error)) echo "<span style='color:red'> $error </span>" ?>
+                <form class="pt-3" action="" method="POST"> 
+                  
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                    <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" Required>
                   </div>
+                  
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" Required>
                   </div>
+
                   <div class="mt-3">
-                    <a class="btn d-grid btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                    <button name="btn" class="btn d-grid btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
                   </div>
+                
                 </form>
               </div>
             </div>
