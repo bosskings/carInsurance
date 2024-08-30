@@ -15,8 +15,6 @@ $pol_no = "P/TBICSL/PMI/24/ABA".$currentDate . $gen_rand_num . $exp;
 
 if(isset($_POST['submit_pol'])) { 
     
-    die('came....');
-
     $pol_fname = $_POST['fname'];
     $uppercase_fname = strtoupper($pol_fname);
 
