@@ -10,7 +10,7 @@ $time = time();
 $currentDate = date("s");
 $gen_rand_num = mt_rand(1000, 9999);
 $exp = substr($time, 0, 4);
-$pol_no = "P/TBICSL/PMI/24/ABA".$currentDate . $gen_rand_num . $exp;
+$pol_no = "P/TBICSL/PMI/".date('s')."/ABA".$currentDate . $gen_rand_num . $exp;
 
 
 if(isset($_POST['submit_pol'])) { 
