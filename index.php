@@ -164,7 +164,7 @@
                         <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
                           <input name="email" type="email" class="form-control" required />
-                          <?php echo $email_err; ?>
+                          <?php if(isset($insert_err_messg)) echo $insert_err_messg; ?>
                         </div>
                       </div>
                     </div>
