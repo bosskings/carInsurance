@@ -27,16 +27,16 @@
 
 <?php 
 
+
+
+session_start();
+
+
+if(!isset($_SESSION['ID'])){
+  header('Location:login.php');
+} 
+
 include 'obtain_policy.php';
-
-
-  session_start();
-
-
-  if(!isset($_SESSION['ID'])){
-    header('Location:login.php');
-  } 
-
 
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
