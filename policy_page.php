@@ -30,6 +30,14 @@
 include 'obtain_policy.php';
 
 
+  session_start();
+
+
+  if(!isset($_SESSION['ID'])){
+    header('Location:login.php');
+  } 
+
+
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $decoded_id = base64_decode($id);
@@ -66,8 +74,8 @@ policy_num($new_id);
   <!-- partial:partials/_navbar.html -->
   <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-      <a class="navbar-brand brand-logo" href="index.html"><img src="../../../assets/images/logo.svg" alt="logo" /></a>
-      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../../assets/images/logo-mini.svg"
+      <a class="navbar-brand brand-logo" href="index.html"><img src="../../../assets/images/treasure base logo.png" alt="logo" /></a>
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../../assets/images/treasure base logo.png"
           alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -125,7 +133,7 @@ policy_num($new_id);
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="logout.php">
             <span class="icon-bg"><i class="mdi mdi-logout menu-icon"></i></span>
             <span class="menu-title">Exit</span>
           </a>
