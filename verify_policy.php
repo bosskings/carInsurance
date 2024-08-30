@@ -126,7 +126,7 @@
                                                         <option value="cert_no">
                                                             Verify by Certificate No (Enter Certifcate No)</option>
                                                         <option
-                                                            value="reg_no)">
+                                                            value="reg_no">
                                                             Verify by Vehicle Registration No (Enter Reg No)</option>
                                                         <option value="chasis_no">Verify by
                                                             Chasis No (Enter Chasis No)</option>

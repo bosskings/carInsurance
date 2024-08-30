@@ -116,9 +116,6 @@ function renew_policy(){
     $renew_pol_no = $_REQUEST['renew_pol_no'];
     $renew_pol_contact = $_REQUEST['renew_pol_contact'];
 
-    //// renew policy
-    $date = date('Y-m-d');
-    $prev = date('Y-m-d', strtotime('last year'));
 
     $conf_pol_no = "SELECT * FROM obtain_policy WHERE policy_no = '$renew_pol_no' AND contact = '$renew_pol_contact' ";
     $conf_pol_no = mysqli_query($conn, $conf_pol_no);
@@ -127,11 +124,17 @@ function renew_policy(){
         $conf_fetch_date = mysqli_fetch_assoc($conf_pol_no);
         $id = $conf_fetch_date['id'];
         $check_date = $conf_fetch_date['renew_date'];
+        $date = date('Y-m-d');
+        
         if ($check_date == $date) {
             echo "<p style='text-align:center;'><b style='color:green;'>Already Up To Date!!</b></p>";
         }else{
+
+            //// renew policy
+            $next = date('Y-m-d', strtotime('next year'));
+
             // update date
-            $update = "UPDATE obtain_policy SET exp_date = '$prev', renew_date = '$date' WHERE id = '$id' ";
+            $update = "UPDATE obtain_policy SET exp_date = '$next', renew_date = '$date' WHERE id = '$id' ";
 
             $sql = mysqli_query($conn, $update);
 

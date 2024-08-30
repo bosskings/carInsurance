@@ -156,9 +156,9 @@ include 'obtain_policy.php';
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Email (Optional)</label>
+                        <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                          <input name="email" type="email" class="form-control" />
+                          <input name="email" type="email" class="form-control" required />
                           <?php echo $email_err; ?>
                         </div>
                       </div>
@@ -3730,3 +3730,7 @@ include 'obtain_policy.php';
 </body>
 
 </html>
+
+
+
+

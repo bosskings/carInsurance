@@ -33,13 +33,13 @@ function verify_policy() {
     if (mysqli_num_rows($select_pol) > 0) {
         $fetch = mysqli_fetch_assoc($select_pol);
 
-        $date = $fetch['renew_date'];
+        $date = $fetch['exp_date'];
         $current_Date = date('Y-m-d');
 
-        if ($date >= $current_Date) {
-            $new_date = '<b style="color:#33cc33;">' . $date . '</b>';
-        }else{
+        if ($date <= $current_Date) {
             $new_date = '<b style="color:red;">' . $date . '</b>';
+        }else{
+            $new_date = '<b style="color:#33cc33;">' . $date . '</b>';
         }
 
 ?>
