@@ -4,6 +4,12 @@
     use Endroid\QrCode\QrCode;
     use Endroid\QrCode\Writer\PngWriter;
 
+
+
+    // echo displayQRcode('bugatti.com');
+
+
+
     function displayQRcode($data){
 
         try {

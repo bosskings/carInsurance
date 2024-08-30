@@ -114,18 +114,15 @@
                     <p>I/WE HEREBY CERTIFY THAT the policy to which this certificate relates is issued<br> in accordance with
                         the provisions of Motor Vehicle's (Third Party Insurance) Ordinance Act 1993</p>
                     
-                    <p style='color: red; text-align: right; padding-right: 50px; font-weight: 700;'>TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p>
                     <div class='row'>
                         <div class='col-md-4'>
                             <p>
                                 ".
-                                   displayQRcode('http://localhost/works/carDashboard/result.php?id='.$fetch_det['id'])
+                                   displayQRcode('https://treasurebaseicsl.com/result.php?id='.$fetch_det['id'])
                                 ."
                             </p>
                         </div>
-                        <div class='col-md-8'>
-                            <p class='insurers'>Insurers of Cooperators and their Dependents</p>
-                        </div>
+                    
                     </div>
                 </div>
             ";
@@ -134,14 +131,14 @@
     
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-            $headers .= "From: sender@example.com" . "\r\n";
+            $headers .= "From: contact@treasurebaseicsl.com" . "\r\n";
     
             $mailSent = mail($to, $subject, $message, $headers);
     
             if ($mailSent) {
-                $GLOBALS['mail_policy_messg'] =  "<span style='color:green'> Email sent successfully. </span>";
+                $GLOBALS['mail_policy_messg'] =  "<span style='color:green'> Email successfully sent. </span>";
             } else {
-                $GLOBALS['mail_policy_messg'] = "<span style='color:red'>  Email sending failed. </span>";
+                $GLOBALS['mail_policy_messg'] = "<span style='color:red'>  Email failed to send. </span>";
             }
         }else{
             $GLOBALS['mail_policy_messg'] = "<span style='color:red'> Policy not found </span>";

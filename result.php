@@ -49,23 +49,30 @@
 
     
         <?php 
-        
-        include 'print_pol_code.php';
-        include_once 'createQRcode.php';
 
-        if(isset($_GET['id'])) {
-            $id = $_GET['id'];
-        } else {
-            echo "ID not found in the URL";
-        }
-        
-        
-        $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
-        $select = mysqli_query($conn, $select);
+            session_start();
 
-        if (mysqli_num_rows($select) > 0) {
-            $fetch_det = mysqli_fetch_assoc($select);
-        }
+
+            if(!isset($_SESSION['ID'])){
+            header('Location:login.php');
+            }
+        
+            include 'print_pol_code.php';
+            include_once 'createQRcode.php';
+
+            if(isset($_GET['id'])) {
+                $id = $_GET['id'];
+            } else {
+                echo "ID not found in the URL";
+            }
+            
+            
+            $select = "SELECT * FROM obtain_policy WHERE id = '$id' ";
+            $select = mysqli_query($conn, $select);
+
+            if (mysqli_num_rows($select) > 0) {
+                $fetch_det = mysqli_fetch_assoc($select);
+            }
 
         ?>
         
@@ -117,19 +124,19 @@
             <p>I/WE HEREBY CERTIFY THAT the policy to which this certificate relates is issued<br> in accordance with
                 the provisions of Motor Vehicle's (Third Party Insurance) Ordinance Act 1993</p>
             
-            <p style="color: red; text-align: right; padding-right: 50px; font-weight: 700;">TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p>
+            <!-- <p style="color: red; text-align: right; padding-right: 50px; font-weight: 700;">TREASURE BASE INSURANCE CO-OPERATIVE SOCIETY LIMITED</p> -->
             <div class="row">
                 <div class="col-md-4">
                     <p>
                         <?php 
                             //function to display QR-code
-                            echo displayQRcode("http://localhost/works/carDashboard/result.php?id=".$id)
+                            echo displayQRcode("https://treasurebaseicsl.com/result.php?id=".$id)
                         ?>
                     </p>
                 </div>
-                <div class="col-md-8">
+                <!-- <div class="col-md-8">
                     <p class="insurers">Insurers of Cooperators and their Dependents</p>
-                </div>
+                </div> -->
             </div>
         </div>
     
