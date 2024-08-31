@@ -164,7 +164,7 @@
                         <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
                           <input name="email" type="email" class="form-control" required />
-                          <?php if(isset($insert_err_messg)) echo $insert_err_messg; ?>
+                          
                         </div>
                       </div>
                     </div>
@@ -3678,7 +3678,7 @@
                             activities. This policy has been taken in good faith as required by law. </label>
                         </div>
                     </div>
-
+                  <?php if(isset($insert_err_messg)) echo $insert_err_messg; ?>
                   <?php echo $insert_succ_messg; ?>  
 
                     <div class="col-md-6">
