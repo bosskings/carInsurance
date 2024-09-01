@@ -36,10 +36,10 @@ if(isset($_POST['submit_pol'])) {
     $date = date('Y-m-d');
     $next = date('Y-m-d', strtotime('next year'));
 
-$check_mail = "SELECT * FROM obtain_policy WHERE email = '$pol_email' ";
+$check_mail = "SELECT * FROM obtain_policy WHERE email = '$pol_email' AND engine_no = '$pol_engine_no' AND chasis_no = '$pol_chasis_no' AND reg_no = '$pol_reg_no' ";
 $check_mail = mysqli_query($conn, $check_mail);
 if(mysqli_num_rows($check_mail) > 0) {
-    $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Email Is Already Taken!</b></p>";
+    $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>User Details Are Already Taken!</b></p>";
 }else{
 
     $insert_form_data = "INSERT INTO obtain_policy (first_name, last_name, email, contact, policy_no, policy_type, engine_no, chasis_no, reg_no,
