@@ -59,6 +59,7 @@ if(mysqli_num_rows($check_mail) > 0) {
         $encodedData = base64_encode($sensitiveData);
         $url = urlencode($encodedData);
 
+        
         header("Location:policy_page.php?id=$url");
 
     }else{
