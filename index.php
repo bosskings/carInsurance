@@ -138,7 +138,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">First Name.....</label>
                         <div class="col-sm-9">
-                          <input name="fname" required type="text" class="form-control" />
+                          <input name="fname" required type="text" class="form-control" value="<?php if(isset($_POST['fname'])) echo $_POST['fname'];  ?>" />
                         </div>
                       </div>
                     </div>
@@ -150,7 +150,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Last Name</label>
                         <div class="col-sm-9">
-                          <input name="lname" required type="text" class="form-control" />
+                          <input name="lname" required type="text" class="form-control" value="<?php if(isset($_POST['lname'])) echo $_POST['lname'];  ?>" />
                         </div>
                       </div>
                     </div>
@@ -163,7 +163,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                          <input name="email" type="email" class="form-control" required />
+                          <input name="email" type="email" class="form-control" required  value="<?php if(isset($_POST['email'])) echo $_POST['email'];  ?>"/>
                           
                         </div>
                       </div>
@@ -175,7 +175,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Mobile Phone</label>
                         <div class="col-sm-9">
-                          <input name="contact" required type="text" class="form-control" />
+                          <input name="contact" required type="text" class="form-control" value="<?php if(isset($_POST['contact'])) echo $_POST['contact'];  ?>"/>
                         </div>
                       </div>
                     </div>
@@ -186,8 +186,14 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Policy Type</label>
                         <div class="col-sm-9">
-                          <select required name="sel_type" class="form-select form-select">
-                            <option value="">Select Type</option>
+                          <select required name="sel_type" class="form-select form-select" value="<?php if(isset($_POST['sel_type'])) echo $_POST['sel_type'];  ?>">
+                            
+                            <option value="<?php if(isset($_POST['sel_type'])) echo $_POST['sel_type']; ?>">
+                              
+                              <?php if(isset($_POST['sel_type'])) echo $_POST['sel_type']; else echo 'Select Make'; ?>
+                          
+                            </option>
+
                             <option value="PMI">Private Motor Individual</option>
                             <option value="PMC">Private Motor Corporate</option>
                             <option value="CVG">Commercial Vehicles Own Goods</option>
@@ -220,7 +226,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Engine No</label>
                         <div class="col-sm-9">
-                          <input name="engine_no" required type="text" class="form-control" />
+                          <input name="engine_no" required type="text" class="form-control" value="<?php if(isset($_POST['engine_no'])) echo $_POST['engine_no'];  ?>"/>
                         </div>
                       </div>
                     </div>
@@ -231,7 +237,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Chasis No</label>
                         <div class="col-sm-9">
-                          <input name="chasis_no" required type="text" class="form-control" />
+                          <input name="chasis_no" required type="text" class="form-control" value="<?php if(isset($_POST['chasis_no'])) echo $_POST['chasis_no'];  ?>" />
                         </div>
                       </div>
                     </div>
@@ -242,7 +248,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Registration No</label>
                         <div class="col-sm-9">
-                          <input name="reg_no" required type="text" class="form-control" />
+                          <input name="reg_no" required type="text" class="form-control" value="<?php if(isset($_POST['reg_no'])) echo $_POST['reg_no'];  ?>" />
                         </div>
                       </div>
                     </div>
@@ -255,8 +261,14 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle make</label>
                         <div class="col-sm-9">
-                          <select name="vehicle_brand" required class="form-select form-select">
-                            <option value="0">Select Make</option>
+                          <select name="vehicle_brand" required class="form-select form-select" >
+                            
+                            <option value="<?php if(isset($_POST['vehicle_brand'])) echo $_POST['vehicle_brand']; ?>">
+                            
+                              <?php if(isset($_POST['vehicle_brand'])) echo $_POST['vehicle_brand']; else echo 'Select Make'; ?>
+                           
+                            </option>
+                            
                             <option value="ACURA">ACURA</option>
                             <option value="ALFA ROMEO">ALFA ROMEO</option>
                             <option value="APTERA">APTERA</option>
@@ -466,8 +478,15 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Model</label>
                         <div class="col-sm-9">
-                          <select name="vehicle_model" required class="form-select form-select">
-                            <option value="0">Select Model</option>
+                          <select name="vehicle_model" required class="form-select form-select" />
+                            
+                          
+                            <option value="<?php if(isset($_POST['vehicle_model'])) echo $_POST['vehicle_model']; ?>">
+                              
+                              <?php if(isset($_POST['vehicle_model'])) echo $_POST['vehicle_model']; else echo 'Select Model'; ?>
+                          
+                            </option>
+
                             <option value="ACURA:(CL)">ACURA:(CL)</option>
                             <option value="ACURA:(INTEGRA)">ACURA:(INTEGRA)</option>
                             <option value="ACURA:(LEGEND)">ACURA:(LEGEND)</option>
@@ -2741,8 +2760,14 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Color</label>
                         <div class="col-sm-9">
-                          <select name="vehicle_color" required class="form-select form-select">
-                            <option value="">Choose Color</option>
+                          <select name="vehicle_color" required class="form-select form-select" >
+                            
+                            <option value="<?php if(isset($_POST['vehicle_color'])) echo $_POST['vehicle_color']; ?>">
+                              
+                              <?php if(isset($_POST['vehicle_color'])) echo $_POST['vehicle_color']; else echo 'Choose Color'; ?>
+                          
+                            </option>
+
                             <option value="Air Force blue">Air Force blue</option>
                             <option value="Alice blue">Alice blue</option>
                             <option value="Alizarin crimson">Alizarin crimson</option>
@@ -3505,8 +3530,14 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Year</label>
                         <div class="col-sm-9">
-                          <select name="model_year" required class="form-select form-select">
-                            <option value="Select Year">Select Year</option>
+                          <select name="model_year" required class="form-select form-select" >
+
+                            <option value="<?php if(isset($_POST['model_year'])) echo $_POST['model_year']; ?>">
+                              
+                              <?php if(isset($_POST['model_year'])) echo $_POST['model_year']; else echo 'Select Year'; ?>
+                          
+                            </option>
+
                             <option value="1980">1980</option>
                             <option value="1981">1981</option>
                             <option value="1982">1982</option>
@@ -3639,8 +3670,14 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Vehicle Type</label>
                         <div class="col-sm-9">
-                          <select name="veh_type" required class="form-select form-select">
-                            <option value="Select Vehicle Type">Select Vehicle Type</option>
+                          <select name="veh_type" required class="form-select form-select" >
+                            
+                            <option value="<?php if(isset($_POST['veh_type'])) echo $_POST['model_year']; ?>">
+                              
+                              <?php if(isset($_POST['model_year'])) echo $_POST['veh_type']; else echo 'Select Year'; ?>
+                          
+                            </option>
+
                             <option value="Motorcycle (Motorcycle Only)">Motorcycle (Motorcycle Only)</option>
                             <option value="Tricycle (Tricycle Only)">Tricycle (Tricycle Only)</option>
                             <option value="Saloon car (Private Motor Only)">Saloon car (Private Motor Only)</option>
@@ -3663,7 +3700,7 @@
                       <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Address (Optional)</label>
                         <div class="col-sm-9">
-                          <input name="address" type="text" class="form-control" />
+                          <input name="address" type="text" class="form-control" value="<?php if(isset($_POST['address'])) echo $_POST['address'];?>" />
                         </div>
                       </div>
                     </div>

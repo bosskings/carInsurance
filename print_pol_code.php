@@ -64,6 +64,7 @@ if ($print_choice === 'policy_no') {
         $fetch_det = mysqli_fetch_assoc($select_user_reg);
         
         $id = $fetch_det['id'];
+        
         header("Location: result.php?id=$id");
 
     }else{
