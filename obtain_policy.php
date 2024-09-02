@@ -36,12 +36,38 @@ if(isset($_POST['submit_pol'])) {
     $date = date('Y-m-d');
     $next = date('Y-m-d', strtotime('next year'));
 
-$check_mail = "SELECT * FROM obtain_policy WHERE email = '$pol_email' OR engine_no = '$pol_engine_no' OR chasis_no = '$pol_chasis_no' OR reg_no = '$pol_reg_no' ";
-$check_mail = mysqli_query($conn, $check_mail);
-if(mysqli_num_rows($check_mail) > 0) {
-    $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>User Details Are Already Taken!</b></p>";
-}else{
+$check_det = "SELECT * FROM obtain_policy ";
+$check_det = mysqli_query($conn, $check_det);
+if(mysqli_num_rows($check_det) > 0) {
+while($fetch_det = mysqli_fetch_assoc($check_det)) {
+    $fetch_mail = $fetch_det['email'];
+    $fetch_policy_no = $fetch_det['policy_no'];
+    $fetch_engine_no = $fetch_det['engine_no'];
+    $fetch_chasis_no = $fetch_det['chasis_no'];
+    $fetch_reg_no = $fetch_det['reg_no'];
 
+    if ($fetch_mail == $pol_email) {
+        $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Email Already Used!</b></p>";
+        $errorFound = true;
+    }elseif($fetch_policy_no == $pol_no) {
+        $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Policy Number is Already Taken!</b></p>";
+        $errorFound = true;
+    }elseif($fetch_engine_no == $pol_engine_no) {
+        $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Engine Number is Already Taken!</b></p>";
+        $errorFound = true;
+    }elseif($fetch_chasis_no == $pol_chasis_no) {
+        $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Chasis Number is Already Taken!</b></p>";
+        $errorFound = true;
+    }elseif($fetch_reg_no == $pol_reg_no) {
+        $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Registeration Number is Already Taken!</b></p>";
+        $errorFound = true;
+        break;
+    }
+}
+
+}
+
+if(!$errorFound){    
     $insert_form_data = "INSERT INTO obtain_policy (first_name, last_name, email, contact, policy_no, policy_type, engine_no, chasis_no, reg_no,
     vehicle_make, vehicle_model, color, model_year, vehicle_type, sel_address, exp_date, renew_date) VALUES ('$uppercase_fname', '$uppercase_lname', '$pol_email',
     '$pol_contact', '$pol_no', '$pol_sel_type', '$pol_engine_no', '$pol_chasis_no', '$pol_reg_no', '$pol_vehicle_brand', '$pol_vehicle_model',
@@ -62,12 +88,11 @@ if(mysqli_num_rows($check_mail) > 0) {
         
         header("Location:policy_page.php?id=$url");
 
-    }else{
-        
-    }
+}else{
+    $GLOBALS['insert_err_messg'] = "<p style='text-align:center;color:red;'><b>Failure Generating Policy Number!</b></p>";  
+}
 
-    $insert_succ_messg = "<p style='text-align:center;'><b style='color:#00e600;'><i class='fa fa-check-circle' aria-hidden='true'></i>Your Request Has Been Submitted</b></p>";
-
+$insert_succ_messg = "<p style='text-align:center;'><b style='color:#00e600;'><i class='fa fa-check-circle' aria-hidden='true'></i>Your Request Has Been Submitted</b></p>";
 }
 
 
