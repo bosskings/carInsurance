@@ -136,7 +136,7 @@
     </div>
     <center>
 
-        <a href='index.php' class="btn btn-info mt-4"><-home</a>
+        <a href='index.php' class="btn btn-info mt-4">home</a>
     </center>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
