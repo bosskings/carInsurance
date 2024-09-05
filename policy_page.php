@@ -52,11 +52,15 @@ function policy_num($page_id) {
 
     global $conn;
 
-    $select = "SELECT policy_no FROM obtain_policy WHERE id = '$page_id' ";
+    $select = "SELECT * FROM obtain_policy WHERE id = '$page_id' ";
     $select = mysqli_query($conn, $select);
     if(mysqli_num_rows($select) > 0) {
         $fetch_no = mysqli_fetch_assoc($select);
         $GLOBALS['pol_no'] = $fetch_no['policy_no'];
+        $GLOBALS['engine_no'] = $fetch_no['engine_no'];
+        $GLOBALS['chasis_no'] = $fetch_no['chasis_no'];
+        $GLOBALS['reg_no'] = $fetch_no['reg_no'];
+        $GLOBALS['cert_no'] = $fetch_no['id'];
     }else{
         $GLOBALS['pol_no'] = "0";
     }
@@ -142,13 +146,31 @@ policy_num($new_id);
     </nav>
 
 <div class="pol-box">
-    <h3>YOUR POLICY NUMBER IS: </h3><b></b>
+    <h5>YOUR POLICY NUMBER IS: </h5><b></b>
     <input type="text" value="<?php if(isset($pol_no)) echo $pol_no; ?>" id="myInput"><br>
     <button id="copy" onclick="myFunction()">Copy policy Number</button>
+
+    <h5>YOUR ENGINE NUMBER IS: </h5><b></b>
+    <input type="text" value="<?php if(isset($engine_no)) echo $engine_no; ?>" id="engineNum"><br>
+    <button id="copy" onclick="engineNum()">Copy engine Number</button>
+
+    <h5>YOUR CHASIS NUMBER IS: </h5><b></b>
+    <input type="text" value="<?php if(isset($chasis_no)) echo $chasis_no; ?>" id="chasisNum"><br>
+    <button id="copy" onclick="chasisNum()">Copy chasis Number</button>
+
+    <h5>YOUR REGISTERATION NUMBER IS: </h5><b></b>
+    <input type="text" value="<?php if(isset($reg_no)) echo $reg_no; ?>" id="regNum"><br>
+    <button id="copy" onclick="regNum()">Copy registeration Number</button>
+
+    <h5>YOUR CERTIFICATE NUMBER IS: </h5><b></b>
+    <input type="text" value="<?php if(isset($cert_no)) echo $cert_no; ?>" id="certNum"><br>
+    <button id="copy" onclick="certNum()">Copy certificate Number</button>
+
     <p style="text-align:center"><b id="demo"></b></p>
 </div>
 
 <script>
+
 function myFunction() {
   var copyText = document.getElementById("myInput");
   copyText.select();
@@ -156,6 +178,39 @@ function myFunction() {
   document.execCommand("copy");
   document.getElementById('demo').innerHTML = "Copied ✅";
 }
+
+function engineNum() {
+  var copyText = document.getElementById("engineNum");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById('demo').innerHTML = "Copied ✅";
+}
+
+function chasisNum() {
+  var copyText = document.getElementById("chasisNum");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById('demo').innerHTML = "Copied ✅";
+}
+
+function regNum() {
+  var copyText = document.getElementById("regNum");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById('demo').innerHTML = "Copied ✅";
+}
+
+function certNum() {
+  var copyText = document.getElementById("certNum");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById('demo').innerHTML = "Copied ✅";
+}
+
 </script>
 
   <!-- container-scroller -->
@@ -188,10 +243,10 @@ function myFunction() {
     .pol-box{
         /* border:2px solid black; */
         border-radius:7px;
-        height:200px;
+        height:530px;
         width: 600px;
         box-shadow:0px 5px 15px rgba(0,0,0,0.25);
-        margin: 140px auto;
+        margin: auto;
         text-align:center;
         padding:70px;
         font-family:segoe ui;
@@ -201,11 +256,13 @@ function myFunction() {
     }
     #copy{
       border:none;
-      padding:3px;
-      font-family:calibri body;
+      border-radius:4px;
+      padding:5px 20px;
+      background: #d9d9d9;
+      font-family:cambria;
     }
     input{
       border:none;
-      width: 60%;
+      width: 50%;
     }
 </style>
