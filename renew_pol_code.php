@@ -21,7 +21,17 @@ function fetch_policy() {
 
         ?>
 
-            <p style="color: red;"><b>Expiration Date: <?php echo $fetch_no['renew_date']; ?></b></p>
+            <p><b>Expiration Date: 
+                <?php 
+                    $ver_date = date("Y-m-d");
+                    $exp_date = $fetch_no['exp_date'];
+                    if($ver_date >= $exp_date) {
+                        echo "<b style='color:red;'>" .$exp_date. "</b>";
+                    }else{
+                        echo "<b style='color:green;'>" .$exp_date. "</b>";
+                    }
+                ?>
+            </b></p>
 
             <tr>
                 <td> First Name </td>

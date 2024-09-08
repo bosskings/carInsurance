@@ -245,7 +245,7 @@ function certNum() {
         border-radius:7px;
         height:530px;
         width: 600px;
-        box-shadow:0px 5px 15px rgba(0,0,0,0.25);
+        box-shadow:0px 5px 10px rgba(0,0,0,0.15);
         margin: auto;
         text-align:center;
         padding:70px;
