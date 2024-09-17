@@ -70,7 +70,6 @@
         ?>
         
         <div class="col-md-8 offset-md-2 item-details">
-            <p style="text-align: center; color: green;"><u><b>Certifcate of Insurance</b></u></p>
             
             <p>Certificate Number: <b><?php echo $coll_cert_no = $fetch_det['id']; ?></b> Policy Number: <b><?php echo $coll_policy_no = $fetch_det['policy_no']; ?></b></p>
             
